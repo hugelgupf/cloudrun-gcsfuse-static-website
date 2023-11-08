@@ -1,0 +1,24 @@
+{
+	"name": "static-website",
+	"env": {
+		"BUCKET": {
+			"description": "GCS bucket name to serve",
+			"required": true
+		},
+		"SERVICE_ACCOUNT": {
+			"description": "Name of service account with view access to the GCS bucket",
+			"required": true
+		}
+	},
+	"options": {
+		"port": 80
+	},
+	"hooks": {
+		"postcreate": {
+			"commands": [
+				"gcloud run services update $K_SERVICE --service-account=$SERVICE_ACCOUNT --region=$GOOGLE_CLOUD_REGION --project=$GOOGLE_CLOUD_PROJECT",
+				"gcloud run services update $K_SERVICE --execution-environment=gen2 --region=$GOOGLE_CLOUD_REGION --project=$GOOGLE_CLOUD_PROJECT"
+			]
+		}
+	}
+}

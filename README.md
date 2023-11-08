@@ -1,5 +1,7 @@
 # Host a static website using Cloud Run and Cloud Storage FUSE
 
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run)
+
 ## Description:
 This repo demonstrates how we can use an ```nginx``` container running on Cloud Run along with ```gcsfuse``` to host a static website where all static files are securely stored in a private bucket on Google Cloud Storage. For more details please check the blog [here](https://varundmishra.medium.com/host-a-secure-static-website-using-cloud-run-and-cloud-storage-8954768403ab).
 
